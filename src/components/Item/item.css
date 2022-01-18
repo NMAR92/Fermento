@@ -1,0 +1,12 @@
+.item {
+    border: 1px solid red;
+    height: 18%;
+    width: 18%;
+    text-align: center;
+    background-color: aquamarine;  
+  }
+
+.item-img{
+  font-size: 5px;
+}  
+  
