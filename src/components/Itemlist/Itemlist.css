@@ -4,5 +4,6 @@
     flex-wrap: wrap;
     height: 30%;
     justify-content: space-evenly;
-    background-color: blue;
+    background-color: red;
+    margin-inline: 100px;
 }

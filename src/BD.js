@@ -23,6 +23,7 @@ export const PRODUCTS = [
     price: 15000,
     picture: "https://picsum.photos/200",
   },
+ 
 ];
 
 export function getProductos() {

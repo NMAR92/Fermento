@@ -1,4 +1,4 @@
-.item {
+.itemDetail {
     border: 1px solid red;
     height: 18%;
     width: 18%;
@@ -7,7 +7,7 @@
     
   }
 
-.item-img{
+.itemDetail-img{
   font-size: 5px;
 }  
 

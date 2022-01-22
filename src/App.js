@@ -1,15 +1,16 @@
-
-import "./components/Itemlistcontainer/Itemlistcontainer.css";
+import "./components/ItemDetailContainer/ItemDetailContainer.css";
 import { NavBar } from "./components/NavBar";
-import { Itemlistcontainer } from "./components/Itemlistcontainer";
+import ItemDetailContainer from "./components/ItemDetailContainer"
+// import { Itemlistcontainer } from "./components/Itemlistcontainer";
 
 
 function App() {
   return (
-    <div>
+    <div className="Itemlistcontainer">
       <NavBar />
       <br></br>
-      <Itemlistcontainer />
+      <ItemDetailContainer/>
+      {/* <Itemlistcontainer/> */}
       <br></br>
     </div>
   );
