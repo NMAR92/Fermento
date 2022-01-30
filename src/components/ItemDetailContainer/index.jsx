@@ -1,21 +1,22 @@
 import ItemDetail from "../ItemDetail";
 import { useEffect, useState } from "react";
-import { getItem } from "C:/Users/msrov/Documents/Coderhouse_React/fermentos/fermento/src/BD_one.js";
+import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
+    const { productId } = useParams();
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
   
     useEffect(() => {
+      const URL = `http://localhost:3001/cervezas/${productId}`;
       setIsLoading(true);
-      getItem()
-      // aqui queda la ejecucion de la promesa de array de productos
+      fetch(URL)
+        .then((res) => res.json())
         .then((data) => setProducts(data))
-        .catch((error) => console.error(error))
         .finally(() => setIsLoading(false));
-        // aqui maneja la promesa para que haga lo que tiene que hacer cuando se resuelva y guatde los  datos de los productos en el estado!
-    }, []);
+    }, [productId]);
   
+    if (isLoading || !product) return <p>Cargando...</p>;
     return (
         <div className="ItemDetailContainer">
       {isLoading ? (

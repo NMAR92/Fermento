@@ -1,30 +1,36 @@
 import Item from "../Item";
 import { useEffect, useState } from "react";
-import { getProductos } from "C:/Users/msrov/Documents/Coderhouse_React/fermentos/fermento/src/BD.js";
+
+const URL = "http://localhost:3001/productos";
 
 function Itemlist() {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-  
-    useEffect(() => {
-      setIsLoading(true);
-      getProductos()
-      // aqui queda la ejecucion de la promesa de array de productos
-        .then((data) => setProducts(data))
-        .catch((error) => console.error(error))
-        .finally(() => setIsLoading(false));
-        // aqui maneja la promesa para que haga lo que tiene que hacer cuando se resuelva y guatde los  datos de los productos en el estado!
-    }, []);
-  
+    const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(URL)
+      .then((response) => response.json())
+      .then((json) => setProducts(json))
+      .catch((err) => setError(err))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  if (isLoading) {
+    return <p>Cargando ...</p>;
+  } else if (error) {
+    return <p>Ha habido un error {error.message}</p>;
+  } else 
     return (
-        <div className="Itemlist">
-      {isLoading ? (
-        <p>Cargando...</p>
-      ) : (
-        products.map((product) => <Item key={product.id} product={product} />)
-      )}
-    </div>
+      <div className="Itemlist">
+        {isLoading ? (
+          <p>Cargando...</p>
+        ) : (
+          products.map((product) => <Item key={product.id} product={product} />)
+        )}
+      </div>
     );
-  }
+  };
 
 export default Itemlist;

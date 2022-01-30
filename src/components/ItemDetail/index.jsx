@@ -10,7 +10,7 @@ const buttonhandler = () =>{
 
 return (
     <div className="itemDetail">
-      <img src={product.picture}/>
+      <img src={product.img}/>
       <br></br>
       <button onClick={buttonhandler} >{show ? "Mostrar" : "Ocultar"}</button>   
       {!show && <p>Nombre: {product.name}</p>}

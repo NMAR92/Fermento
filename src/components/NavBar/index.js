@@ -1,5 +1,6 @@
 import "./NavBar.css";
 import Cart from "../Icono";
+import { Link } from "react-router-dom";
 
 
 export function NavBar() {
@@ -7,28 +8,26 @@ export function NavBar() {
     <nav className="navbar">
       <div className="container">
         <div className="title">
-          <h1>Fermentos</h1>
+        <Link to="/" id="title">Fermentos</Link>
         </div>
       </div>
       <div className="container">
         <div className="menu">
-          <a href="#">Inicio</a>
-          <a href="#">Envios</a>
+          <Link to="/">Inicio</Link>
           <div class="dropdown">
             <button className="dropbtn">
-              Ofertas
+              Productos
               <i className="fa fa-caret-down"></i>
             </button>
             <div className="dropdown-content">
-              <a href="#">Cerveza</a>
-              <a href="#">Yogurt</a>
-              <a href="#">Kombucha</a>
+              <Link to="category/1">Cervezas</Link>
+              <Link to="category/2">Probioticos</Link>
             </div>
           </div>
         </div>
       </div>
       <div className="container">
-        <Cart />
+        <Cart/>
       </div>
     </nav>
   );

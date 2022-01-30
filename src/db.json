@@ -1,0 +1,85 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "name": "IPA",
+        "price": 120,
+        "description": "Bien lupulada",
+        "stock": 1001,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 2,
+        "name": "APA",
+        "price": 120,
+        "description": "Para los que no soportan tanto amargor",
+        "stock": 1002,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 3,
+        "name": "Stout",
+        "price": 150,
+        "description": "Negra con tono de cafe",
+        "stock": 1003,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 4,
+        "name": "Porter",
+        "price": 150,
+        "description": "Negra con tonos de chocolate",
+        "stock": 1004,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 5,
+        "name": "Red",
+        "price": 180,
+        "description": "Roja con tonos de jengibre",
+        "stock": 1005,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 6,
+        "name": "Yogurt",
+        "price": 200,
+        "description": "Saborso",
+        "stock": 1005,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 7,
+        "name": "Combucha",
+        "price": 200,
+        "description": "De ciruela",
+        "stock": 1005,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 8,
+        "name": "Kefir tipo yogurt griego",
+        "price": 220,
+        "description": "Integral",
+        "stock": 1005,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 9,
+        "name": "leche kefirada",
+        "price": 220,
+        "description": "yogurt bebible",
+        "stock": 1005,
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 10,
+        "name": "queso untable",
+        "price": 220,
+        "description": "Muy saboroso",
+        "stock": 1005,
+        "img": "https://picsum.photos/200"
+      }
+    ]
+  }
+  

@@ -1,11 +1,10 @@
-.title h1 {
+.container #title {
   color: rgba(192, 184, 184, 0.789);
-  font: 2.1em sans-serif;
+  font: 30px sans-serif;
   position: right;
   text-shadow: 0px 0px 6px rgb(255, 255, 255);
   color: white;
   margin-left: 40px;
-  
 }
 
 .menu {
