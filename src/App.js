@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import CervezaPage from "./pages/CervezaPage";
 import ProbioticoPage from "./pages/ProbioticoPage";
 import ItemDetailPage from "./pages/ItemDetailPage";
+import CartPage from "./pages/CartPage";
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
           </Route>
           <Route path="item">
             <Route path=":productId" element={<ItemDetailPage />} />
-          </Route> 
+          </Route>
+          <Route path="cart" element={<CartPage />}></Route> 
         </Route>
       </Routes>
     </BrowserRouter>

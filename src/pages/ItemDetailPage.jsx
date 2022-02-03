@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import ItemCount from "../components/Itemcount";
 
 const ItemDetailPage = () => {
   const { productId } = useParams();
+  const [counter, setCounter] = useState(0);
+  const [isProductinCart, setisProductInCart] = useState(false);
+  // const [cart, setCart] = useState([]);
   const [product, setProduct] = useState();
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(productId);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const URL = `http://localhost:3001/productos/${productId}`;
@@ -17,14 +20,46 @@ const ItemDetailPage = () => {
       .finally(() => setIsLoading(false));
   }, [productId]);
 
+  const desc = () => {
+    if (counter === 0) {
+      setCounter((prevState) => prevState);
+    }else {
+      setCounter((prevState) =>(prevState - 1));
+    }
+  };
+
+  const inc = () => {
+    setCounter((prevState) => prevState + 1);
+  };
+
+
+  const handleAddToCart = () => {
+    if (counter !== 0) {
+      // addToCart(product);
+      setisProductInCart(true);
+    }
+  };
+
+  // const addToCart = () => {
+  //   setCart((prevState) => [...prevState, { product, cart }]);
+  // };
+
   if (isLoading || !product) return <p>Cargando...</p>;
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <img src={product.img} alt={product.name} />
-      <p>{product.description}</p>
-      <p>{product.stock}</p>
-      <p>{product.price}</p>
+    <div >
+      <img src={product.img} alt="" />
+      <br></br>
+      <p>Nombre: {product.name}</p>
+      <p>Precio: {product.price}</p>
+      <p>Descripcion: {product.description}</p>
+      <p>Stock: {product.stock}</p>
+      {!isProductinCart ? (
+      <><>
+          <ItemCount inc={inc} desc={desc} counter={counter} />
+        </><button onClick={handleAddToCart}>Agregar al carrito</button></>
+    ) : (
+      <button onClick={() => navigate(`/cart`)}>Terminar mi compra</button>
+    )}
     </div>
   );
 };

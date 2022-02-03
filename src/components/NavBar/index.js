@@ -27,7 +27,7 @@ export function NavBar() {
         </div>
       </div>
       <div className="container">
-        <Cart/>
+        <Link to="cart"><Cart/></Link>
       </div>
     </nav>
   );
