@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ItemCount from "../components/Itemcount";
+import { CartContext } from "../context/CartContext";
+
 
 const ItemDetailPage = () => {
   const { productId } = useParams();
   const [counter, setCounter] = useState(0);
   const [isProductinCart, setisProductInCart] = useState(false);
-  // const [cart, setCart] = useState([]);
   const [product, setProduct] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const {isInCart, Add} = useContext(CartContext);
 
   useEffect(() => {
     const URL = `http://localhost:3001/productos/${productId}`;
@@ -32,20 +34,17 @@ const ItemDetailPage = () => {
     setCounter((prevState) => prevState + 1);
   };
 
-
   const handleAddToCart = () => {
     if (counter !== 0) {
-      // addToCart(product);
+      Add(productId, product, counter);
+      isInCart(productId);
       setisProductInCart(true);
-    }
+      }
   };
 
-  // const addToCart = () => {
-  //   setCart((prevState) => [...prevState, { product, cart }]);
-  // };
-
   if (isLoading || !product) return <p>Cargando...</p>;
-  return (
+
+   return (
     <div >
       <img src={product.img} alt="" />
       <br></br>
@@ -55,7 +54,7 @@ const ItemDetailPage = () => {
       <p>Stock: {product.stock}</p>
       {!isProductinCart ? (
       <><>
-          <ItemCount inc={inc} desc={desc} counter={counter} />
+        <ItemCount inc={inc} desc={desc} counter={counter} />
         </><button onClick={handleAddToCart}>Agregar al carrito</button></>
     ) : (
       <button onClick={() => navigate(`/cart`)}>Terminar mi compra</button>

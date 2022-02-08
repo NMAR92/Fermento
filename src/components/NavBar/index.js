@@ -14,7 +14,7 @@ export function NavBar() {
       <div className="container">
         <div className="menu">
           <Link to="/">Inicio</Link>
-          <div class="dropdown">
+          <div className="dropdown">
             <button className="dropbtn">
               Productos
               <i className="fa fa-caret-down"></i>

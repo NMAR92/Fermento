@@ -16,7 +16,7 @@ function ItemDetailContainer() {
         .finally(() => setIsLoading(false));
     }, [productId]);
   
-    if (isLoading || !product) return <p>Cargando...</p>;
+    if (isLoading || !products) return <p>Cargando...</p>;
     return (
         <div className="ItemDetailContainer">
       {isLoading ? (
