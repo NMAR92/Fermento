@@ -3,6 +3,7 @@ import { IoIosCart } from 'react-icons/io';
 
 
 function Cart() {
+  
   return (
     <h1>
       <IoIosCart className="cart"/>

@@ -1,9 +1,12 @@
 import "./NavBar.css";
-import Cart from "../Icono";
+// import Cart from "../Icono";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext} from '../../context/CartContext';
 
 
 export function NavBar() {
+  const {TotalQuantity} = useContext(CartContext);
   return (
     <nav className="navbar">
       <div className="container">
@@ -27,7 +30,7 @@ export function NavBar() {
         </div>
       </div>
       <div className="container">
-        <Link to="cart"><Cart/></Link>
+        <Link to="cart"><TotalQuantity/></Link>
       </div>
     </nav>
   );

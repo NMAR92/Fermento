@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Cart from "../components/Icono"
 
 export const CartContext = createContext([]);
 
@@ -18,10 +19,8 @@ export const CartProvider = ({ children }) => {
     var a = false;
       cart.forEach(element => {
          if (element.item.id === parseInt(id)){a = true;}})
-      console.log(a)
       return a;
     };
-
 
   const Add =(id, item, quantity) => {
     if (isInCart(id)){
@@ -31,14 +30,35 @@ export const CartProvider = ({ children }) => {
       addItem(item, quantity);
     };
    };
+   
+   const TotalPrice =() => {
+    var total =0;
+    cart.forEach(element => {
+      (total = total + (element.quantity)*(element.item.price))});
+      return (
+        <div>
+            <p>Precio total {`${total}`}</p>
+        </div>
+      )
+  };
   
-  
+  const TotalQuantity =() => {
+    var total =0;
+    cart.forEach(element => {
+      (total = total + element.quantity)});
+    return(
+      <div>
+          {total!==0 && <div> <Cart/> {`${total}`}</div>}
+      </div>
+    )
+  };
+
   const removeItem = (id) => {
     setCart((prev) => prev.filter((element) => element.item.id !== parseInt(id)));
   };
 
   return (
-    <CartContext.Provider value={{ cart, addItem, clear, isInCart, Add, removeItem }}>
+    <CartContext.Provider value={{ cart, addItem, clear, isInCart, Add, removeItem, TotalPrice, TotalQuantity}}>
       {children}
     </CartContext.Provider>
   );
