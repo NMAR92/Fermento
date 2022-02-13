@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ItemCount from "../components/Itemcount";
 import { CartContext } from "../context/CartContext";
+import {getFirestore} from "../components/firebase";
 
 
 const ItemDetailPage = () => {
@@ -12,13 +13,20 @@ const ItemDetailPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const {isInCart, Add} = useContext(CartContext);
+  
 
   useEffect(() => {
-    const URL = `http://localhost:3001/productos/${productId}`;
+    const db = getFirestore();
+    const productsCollection = db.collection("productos");
+    const selectedProduct = productsCollection.doc(productId);
+
     setIsLoading(true);
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => setProduct(data))
+    selectedProduct
+      .get()
+      .then((response) => {
+        if (!response.exists) console.log("El producto no existe");
+        setProduct({ ...response.data(), id: response.id });
+      })
       .finally(() => setIsLoading(false));
   }, [productId]);
 
