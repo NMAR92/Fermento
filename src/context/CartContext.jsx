@@ -37,7 +37,7 @@ export const CartProvider = ({ children }) => {
       (total = total + (element.quantity)*(element.item.price))});
       return (
         <div>
-            <p>Precio total {`${total}`}</p>
+            {total}
         </div>
       )
   };

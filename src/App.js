@@ -5,6 +5,7 @@ import CategoryPage from "./pages/CategoryPage";
 import ItemDetailPage from "./pages/ItemDetailPage";
 import CartPage from "./pages/CartPage";
 import { CartProvider } from "./context/CartContext";
+import ThankyouPage from "./pages/TankyouPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               </Route>
               <Route path="cart" element={<CartPage />}></Route>
               <Route path="category/:categoryId" element={<CategoryPage />} />
+              <Route path="thanks/:orderId" element={<ThankyouPage />} />
             </Route>
           </Routes>
         </BrowserRouter>
