@@ -23,8 +23,9 @@ export function NavBar() {
               <i className="fa fa-caret-down"></i>
             </button>
             <div className="dropdown-content">
-              <Link to="/category/2">Cervezas</Link>
               <Link to="/category/1">Probioticos</Link>
+              <Link to="/category/2">Cervezas</Link>
+              <Link to="/category/3">Quesos</Link>
             </div>
           </div>
         </div>

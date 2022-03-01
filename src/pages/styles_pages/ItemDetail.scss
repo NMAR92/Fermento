@@ -1,0 +1,77 @@
+
+
+.Dcard {
+  width: 40%;
+  border-radius: 5px;
+  padding: 2rem;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-around;
+  background-color: #eeeeee;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 3%;
+
+.Dimg-container {
+  box-shadow: 4px 2px 13px -2px rgba(0,0,0,0.75);
+  background-color: white;
+  overflow: hidden;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+.Ddata-container {
+  box-shadow: 4px 2px 13px -2px rgba(0,0,0,0.75);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  text-align: center;
+  width: 60%;
+  align-content: center;
+
+  .Dtitle{
+    text-transform: uppercase;
+    font-weight: 900;
+    color: teal;
+    font-size: 30px;
+  }
+  /* Bounce In */
+  .Dbutton {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(4, 250, 156, 0.75);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    width: 40%;
+    align-content: center;
+    background-color: teal;
+    color: white;
+    font-size: 1rem;
+    font-weight: 70;
+    cursor: pointer;
+
+  }
+  .Dbutton:hover, .Dbutton:focus, .Dbutton:active {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    align-content: center;
+    background-color: rgb(128, 36, 0);
+    cursor: pointer;
+}
+}
+}
+
+
+.Rings{
+  color:"#00BFFF";
+  height:80px;
+  width:80px;
+}
+
+

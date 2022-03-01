@@ -6,6 +6,7 @@ import ItemDetailPage from "./pages/ItemDetailPage";
 import CartPage from "./pages/CartPage";
 import { CartProvider } from "./context/CartContext";
 import ThankyouPage from "./pages/TankyouPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -20,8 +21,11 @@ function App() {
                 <Route path=":productId" element={<ItemDetailPage />} />
               </Route>
               <Route path="cart" element={<CartPage />}></Route>
-              <Route path="category/:categoryId" element={<CategoryPage />} />
+              <Route path="category">
+                <Route path=":categoryId" element={<CategoryPage />} />
+              </Route>
               <Route path="thanks/:orderId" element={<ThankyouPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

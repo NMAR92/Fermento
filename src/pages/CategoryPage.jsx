@@ -1,6 +1,7 @@
 import { Itemlistcontainer } from "../components/Itemlistcontainer";
 import { useParams } from "react-router-dom";
 
+
 const CategoryPage = () => {
   const { categoryId } = useParams();
   return (

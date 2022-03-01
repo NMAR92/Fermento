@@ -1,0 +1,26 @@
+.carousel{
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.imagen{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-weight:100;
+    margin-bottom: 1rem;
+    color: rgb(161, 35, 35);
+    text-shadow: 0px 0px 6px rgba(253, 208, 7, 0.952);
+    font-size: 5rem;
+    cursor: pointer;
+}
+

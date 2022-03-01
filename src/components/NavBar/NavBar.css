@@ -1,6 +1,6 @@
 .container #title {
   color: rgba(192, 184, 184, 0.789);
-  font: 30px sans-serif;
+  font: 50px sans-serif;
   position: right;
   text-shadow: 0px 0px 6px rgb(255, 255, 255);
   color: white;
@@ -17,6 +17,8 @@
   align-items: center; 
   justify-content: space-between;
   background-color: teal;
+  min-height: 140px;
+  
 }
 
 .navbar a {
@@ -46,6 +48,7 @@
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
+  text-align: center;
 }
 
 /* Add a red background color to navbar links on hover */
@@ -61,6 +64,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  text-align: center;
 }
 
 /* Links inside the dropdown */
@@ -70,7 +74,7 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
+  text-align: center;
 }
 
 /* Add a grey background color to dropdown links on hover */

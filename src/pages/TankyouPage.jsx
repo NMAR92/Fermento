@@ -1,10 +1,15 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
-import { getFirestore } from "../components/firebase";
+import { getFirestore } from "../firebase";
+// import { useContext} from "react";
+// import { CartContext } from "../context/CartContext";
+import { Rings } from  'react-loader-spinner';
+import "../components/ItemDetailContainer/ItemDetailContainer.css";
 
 const ThankYouPage = () => {
   const { orderId } = useParams();
   const [order, setOrder] = React.useState({});
+
   
 
   React.useEffect(() => {
@@ -16,7 +21,7 @@ const ThankYouPage = () => {
   }, [orderId]);
 
   if (!order.id) {
-    return <p>Cargando...</p>;
+    return <Rings className="Rings"/>;
   }
 
   return (

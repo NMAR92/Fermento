@@ -1,0 +1,28 @@
+.wrapper-count{
+    margin-top: 0.5%;
+    margin-bottom: 5%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  flex-direction: wrap;
+    
+}
+
+
+.count{
+    align-content: center;
+    background-color: teal;
+    color: white;
+    font-size: 1rem;
+    font-weight: 70;
+    cursor: pointer;
+}
+
+.table_count td,th {
+  padding: 0.5em;
+  text-align: center;
+  border: 1px solid teal;
+  color: black !important;
+  font-weight: 100 sans-serif;
+  width:33%;
+  }

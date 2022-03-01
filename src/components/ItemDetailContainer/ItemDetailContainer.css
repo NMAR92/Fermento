@@ -1,9 +1,5 @@
-.Itemlistcontainer{
-    background-color: pink;
-}
-
-.table {
-    border: 1px solid black;
-    width: 100%;
-    text-align: center;
-  }
+.Rings{
+    color:"#00BFFF";
+    height:80px;
+     width:80px;
+} 

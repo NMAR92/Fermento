@@ -5,12 +5,12 @@ import "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBv5kYGQmIJDXvDLra4ST_azgmvqVA8VpE",
-    authDomain: "fermento-2022.firebaseapp.com",
-    projectId: "fermento-2022",
-    storageBucket: "fermento-2022.appspot.com",
-    messagingSenderId: "930564675666",
-    appId: "1:930564675666:web:88ce8f70fec181ecd9678b"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
   }
 
 const app = firebase.initializeApp(firebaseConfig);
@@ -18,4 +18,6 @@ const app = firebase.initializeApp(firebaseConfig);
 export const getFirebase = () => app;
 
 export const getFirestore = () => firebase.firestore(app);
+
+
 

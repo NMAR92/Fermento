@@ -1,0 +1,31 @@
+.cart_total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    .cart{
+        margin-right: 40px;
+        font-size: 35px;
+        color:white;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .badge {
+        background-color: red;
+        border-radius: 10px;
+        color: white;
+        display: inline-block;
+        font-size: 15px;
+        line-height: 1;
+        padding: 7px 10px;
+        height: 10px;
+        // // text-align: center;
+        // vertical-align: middle;
+        // white-space: nowrap;
+    }  
+}
+
+

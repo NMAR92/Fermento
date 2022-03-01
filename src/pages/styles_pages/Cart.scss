@@ -1,0 +1,192 @@
+.Dcart {
+        width: 70%;
+        border-radius: 5px;
+        padding: 1rem;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: wrap;
+        justify-content: space-around;
+        background-color: #eeeeee;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 3%;
+
+    .order {
+          box-shadow: 4px 2px 13px -2px rgba(0,0,0,0.75);
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          text-align: center;
+          width: 60%;
+          align-content: center;
+
+          .delete{
+            height: 3rem;
+            width: 3rem;
+            background-color: #a7f8d9;
+            border: #a7f8d9;
+            font-size: 25px;
+            color:rgb(33, 37, 85);
+          }
+
+          .delete:hover, .delete:focus, .delete:active{
+            cursor: pointer;
+            color:rgb(128, 36, 0);
+            background-color: teal;
+          }
+
+          .delete_2{
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(4, 250, 156, 0.75);
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            width: 30%;
+            margin-top: 1%;
+            margin-left: 35%;
+            margin-right: 35%;            
+            background-color: teal;
+            color: white;
+            font-size: 1rem;
+            font-weight: 70;
+            cursor: pointer;
+            color:white;
+          }
+
+          .delete_2:hover, .delete_2:focus, .delete_2:active{
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(4, 250, 156, 0.75);
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            width: 30%;
+            margin-top: 1%;
+            margin-left: 35%;
+            margin-right: 35%; 
+            background-color: teal;
+            color: white;
+            font-size: 1rem;
+            font-weight: 70;
+            cursor: pointer;
+            color:white;
+            transform: scale(1.1);
+            background-color: rgb(128, 36, 0);
+          }
+
+          .price_total{
+           box-shadow: 4px 2px 13px -2px rgba(0,0,0,0.75);
+           display: flex;
+           background-color: rgb(209, 200, 200);
+           width: 60%;
+           margin-top: 2%;
+           margin-left: 20%;
+           margin-right: 20%;
+           align-content: center;
+          }
+
+          .price_total p{
+            width: 40%;
+            margin-left: 30%;
+            margin-right: 30%;
+            font-size: 1.5rem;
+            font-weight: 100;
+            color: teal;
+        }
+
+  
+          h3 {
+            position: relative;
+          }
+    
+          h3.topborder {
+            margin-top: 0;
+          }
+    
+          h3.topborder:before {
+             content: "";
+             display: block;
+             border-top: 1px solid #c2c2c2;
+             width: 100%;
+             height: 1px;
+             position: absolute;
+            top: 50%;
+            z-index: 1;
+           }
+    
+          h3.topborder span {
+             background: #fff;
+             padding: 0 10px 0 0;
+             position: relative;
+             z-index: 5;
+          }
+
+          table{
+             color: rgb(33, 37, 85);
+             font-weight: 100 sans-serif;
+             width:100%;
+          }
+
+          table > thead > tr {
+            padding:15px 25px;
+            text-align: center;
+            background-color: #2cc087;
+          }
+
+          table > tbody > tr{
+            padding:10px 20px;
+            text-align: center;
+            background-color: #a7f8d9;
+          }
+
+          // table  tbody  tr :hover{
+          //  background-color: rgb(128, 36, 0);
+          // }
+
+    }
+      
+    .datos {
+        box-shadow: 4px 2px 13px -2px rgba(0,0,0,0.75);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        text-align: center;
+        width: 40%;
+        align-content: center;
+
+        h3 {
+	        position: relative;
+        }
+  
+        h3.topborder {
+          margin-top: 0;
+        }
+  
+        h3.topborder:before {
+   	      content: "";
+   	      display: block;
+   	      border-top: 1px solid #c2c2c2;
+   	      width: 100%;
+   	      height: 1px;
+   	      position: absolute;
+          top: 50%;
+          z-index: 1;
+         }
+  
+        h3.topborder span {
+           background: #fff;
+           padding: 0 10px 0 0;
+           position: relative;
+           z-index: 5;
+        }
+
+        .error_v {
+          font-size: 0.8rem;
+          color:rgb(128, 36, 0);
+          font-weight: 1000;
+        }
+    }
+
+    
+}

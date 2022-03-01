@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
-import Cart from "../components/Icono"
+import Cart from "../components/Icono";
+import "../components/Icono/cart.scss";
+
 
 export const CartContext = createContext([]);
 
@@ -18,14 +20,14 @@ export const CartProvider = ({ children }) => {
   const isInCart = (id) => {
     var a = false;
       cart.forEach(element => {
-         if (element.item.id === parseInt(id)){a = true;}})
+         if (element.item.id === id){a = true;}})
       return a;
     };
 
   const Add =(id, item, quantity) => {
     if (isInCart(id)){
       cart.forEach(element => {
-        if (element.item.id === parseInt(id)){element.quantity = element.quantity + quantity}})
+        if (element.item.id === id){element.quantity = element.quantity + quantity}})
     } else{
       addItem(item, quantity);
     };
@@ -37,7 +39,7 @@ export const CartProvider = ({ children }) => {
       (total = total + (element.quantity)*(element.item.price))});
       return (
         <div>
-            {total}
+            <span className="total_price"> {`$${total}`}</span>
         </div>
       )
   };
@@ -47,18 +49,20 @@ export const CartProvider = ({ children }) => {
     cart.forEach(element => {
       (total = total + element.quantity)});
     return(
-      <div>
-          {total!==0 && <div> <Cart/> {`${total}`}</div>}
+      <div >
+          {total!==0 && <div className="cart_total"> <Cart/> 
+          <span className="badge"> {`${total}`}</span>
+          </div>}
       </div>
     )
   };
 
   const removeItem = (id) => {
-    setCart((prev) => prev.filter((element) => element.item.id !== parseInt(id)));
+    setCart((prev) => prev.filter((element) => element.item.id !== id));
   };
 
   return (
-    <CartContext.Provider value={{ cart, addItem, clear, isInCart, Add, removeItem, TotalPrice, TotalQuantity}}>
+    <CartContext.Provider value={{ cart, clear, isInCart, Add, removeItem, TotalPrice, TotalQuantity}}>
       {children}
     </CartContext.Provider>
   );

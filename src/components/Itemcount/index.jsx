@@ -1,22 +1,24 @@
 import React from "react";
-import "./count.css";
+import "./itemcount.scss";
 
 const ItemCount = ({ desc, inc, counter }) => {
   return (
-    <div className="count">
-      <table>
+    <div>
+    <div className="wrapper-count">
+      <table className="table_count" >
         <thead>
           <tr>
             <th>
-              <button onClick={desc}>-</button>
+              <button className="count" onClick={desc}>-</button>
             </th>
             <th>{counter}</th>
             <th>
-              <button onClick={inc}>+</button>
+              <button className="count" onClick={inc}>+</button>
             </th>
           </tr>
         </thead>
       </table>
+    </div>
     </div>
   );
 };

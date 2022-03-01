@@ -1,0 +1,118 @@
+.item-card {
+  box-shadow: 4px 2px 13px -2px rgba(0,0,0,0.75);
+  width: 283px;
+  background: var(--card);
+  border-radius: 5px;
+  padding: 10px;
+  font-family: sans-serif;
+  transition: transform 0.3s, background 0.3s;
+
+.img-container {
+  background-color: white;
+  overflow: hidden;
+  text-align: center;
+  width: 282px;
+  cursor: pointer;
+  }
+
+.data-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: teal;
+  text-align: center;
+  width: 250px;
+  border-radius: 0.5em;
+  margin-top: 0.5rem;
+  align-content: center;
+
+  .name {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0px 0px 6px rgb(255, 255, 255);
+  }
+  .price {
+    font-size: 1.2rem;
+  }
+  .navBtn {
+    margin-top: auto;
+      background-color: #51d387ea;
+      border: none;
+      color: white;
+      padding: 4px 35px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      -webkit-box-shadow: 0 10px 30px 0 rgba(161,240,139,0.4);
+      box-shadow: 0 10px 30px 0 rgba(161,240,139,0.4);
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      margin: 5px 20px 40px 20px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+  }
+ 
+}
+
+&:hover {
+  transform: scale(1.07);
+.img-container {
+  height: 170px;
+  background-color: white;
+  overflow: hidden;
+  text-align: center;
+  width: 282px;
+  cursor: pointer;
+  }
+
+.data-container {
+  padding: 1rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: teal;
+  text-align: center;
+  width: 250px;
+  border-radius: 0.5em;
+  margin-top: 0.5rem;
+  align-content: center;
+  
+
+  .name {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .price {
+    font-size: 1.2rem;
+  }
+  .navBtn {
+    margin-top: auto;
+      background-color: #ee5914b4;
+      border: none;
+      color: white;
+      padding: 4px 35px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      -webkit-box-shadow: 0 10px 30px 0 rgba(161,240,139,0.4);
+      box-shadow: 0 10px 30px 0 rgba(161,240,139,0.4);
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      margin: 5px 20px 40px 20px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+  }
+}
+}
+}

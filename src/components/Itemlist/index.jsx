@@ -1,7 +1,10 @@
 import Item from "../Item";
 import { useEffect, useState } from "react";
-import {getFirestore} from "../firebase";
+import {getFirestore} from "../../firebase"
 import { useParams } from "react-router-dom";
+import { Rings } from  'react-loader-spinner';
+import "./Itemlist.css";
+
 
 function Itemlist() {
     const [products, setProducts] = useState([]);
@@ -38,7 +41,7 @@ function Itemlist() {
         }
       };
       getDataFromFirestore();
-    }, [categoryId]);  
+    }, [categoryId]);
 
  //para json server... 
  
@@ -54,14 +57,18 @@ function Itemlist() {
   // }, []);
 
   if (isLoading) {
-    return <p>Cargando ...</p>;
+    return (
+      <div className="item-container">
+        <Rings className="Rings"/>
+      </div>
+    )  
   } else if (error) {
     return <p>Ha habido un error {error.message}</p>;
   } else 
     return (
-      <div className="Itemlist">
+      <div className="item-container">
         {isLoading ? (
-          <p>Cargando...</p>
+          <Rings className="Rings"/>
         ) : (
           products.map((product) => <Item key={product.id} product={product} />)
         )}

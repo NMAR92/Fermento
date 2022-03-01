@@ -1,5 +1,6 @@
-import "./cart.css";
+import "./cart.scss";
 import { IoIosCart } from 'react-icons/io';
+
 
 
 function Cart() {
@@ -12,4 +13,6 @@ function Cart() {
 }
 
 export default Cart;
+
+
 

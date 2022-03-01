@@ -2,7 +2,9 @@ import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ItemCount from "../components/Itemcount";
 import { CartContext } from "../context/CartContext";
-import {getFirestore} from "../components/firebase";
+import {getFirestore} from "../firebase";
+import { Rings } from  'react-loader-spinner';
+import "../pages/styles_pages/ItemDetail.scss";
 
 
 const ItemDetailPage = () => {
@@ -50,25 +52,46 @@ const ItemDetailPage = () => {
       }
   };
 
-  if (isLoading || !product) return <p>Cargando...</p>;
+  if (isLoading || !product) return(
+    <div>
+    <div className="Dcard">
+      <Rings className="Rings"/>
+    </div>
+    </div>
+  )
 
    return (
-    <div >
-      <img src={product.img} alt="" />
-      <br></br>
-      <p>Nombre: {product.name}</p>
-      <p>Precio: {product.price}</p>
-      <p>Descripcion: {product.description}</p>
-      <p>Stock: {product.stock}</p>
-      {!isProductinCart ? (
-      <><>
-        <ItemCount inc={inc} desc={desc} counter={counter} />
-        </><button onClick={handleAddToCart}>Agregar al carrito</button></>
-    ) : (
-      <button onClick={() => navigate(`/cart`)}>Terminar mi compra</button>
-    )}
-    </div>
-  );
+     <div>
+       <div className="Dcard">
+         <div className="Dimg-container">
+           <img src={product.img} alt={product.name} />
+         </div>
+         <div className="Ddata-container">
+           <p className="Dtitle"> {product.name}</p>
+           <p>Precio: ${product.price}</p>
+           <p>Descripcion: {product.description}</p>
+           <p>Stock: {product.stock}</p>
+           <div className="B">
+             {!isProductinCart ? (
+               <>
+                 <>
+                   <ItemCount inc={inc} desc={desc} counter={counter} />
+                 </>
+                 <button className="Dbutton" onClick={handleAddToCart}>
+                   Agregar al carrito{" "}
+                 </button>
+               </>
+             ) : (
+               <button className="Dbutton" onClick={() => navigate(`/cart`)}>
+                 Terminar mi compra
+               </button>
+             )}
+           </div>
+         </div>
+       </div>
+     </div>
+   );
 };
 
 export default ItemDetailPage;
+
