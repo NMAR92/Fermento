@@ -1,16 +1,16 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../firebase";
-// import { useContext} from "react";
-// import { CartContext } from "../context/CartContext";
 import { Rings } from  'react-loader-spinner';
-import "../components/ItemDetailContainer/ItemDetailContainer.css";
+
+
+import "./styles_pages/Thank.scss";
 
 const ThankYouPage = () => {
   const { orderId } = useParams();
   const [order, setOrder] = React.useState({});
-
-  
+ 
+   
 
   React.useEffect(() => {
     const db = getFirestore();
@@ -21,16 +21,35 @@ const ThankYouPage = () => {
   }, [orderId]);
 
   if (!order.id) {
-    return <Rings className="Rings"/>;
+    return (
+      <div className="card">
+        <Rings className="Rings" />
+      </div>
+    );
   }
 
   return (
     <div>
-      <h1>Gracias por su compra, sr/sra. {order.buyer.name}</h1>
-      <h2>Detalle de su compra:</h2>
-      <p>Productos:</p>
-      <p>{order.items[0].item.name}</p>
-      <p>Toal:{order.total}</p>
+      <div className="card">
+        <div className="card_title">
+          <h3 className="topborder">
+            <span className="font-title_1">Thank You!</span>
+          </h3>
+          <br></br>
+          <span className="font-title_2">Sr/Sra. {order.buyer.name}</span>
+        </div>
+        <div className="card_title">
+          <h1>Total a abonar :${order.total}</h1>
+          <span className="font-title_3">
+            El proveedor se pondrá en contacto con usted para coordinar el
+            envío.
+          </span>
+          <br></br>
+          <span className="font-title_3">
+            Fermentos agradece su compra y espera su pronto regreso.
+          </span>
+        </div>
+      </div>
     </div>
   );
 };

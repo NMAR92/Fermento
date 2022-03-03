@@ -15,6 +15,7 @@ const ItemDetailPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const {isInCart, Add} = useContext(CartContext);
+  const [msj, setMsj] = useState();
   
 
   useEffect(() => {
@@ -45,11 +46,17 @@ const ItemDetailPage = () => {
   };
 
   const handleAddToCart = () => {
-    if (counter !== 0) {
-      Add(productId, product, counter);
-      isInCart(productId);
-      setisProductInCart(true);
-      }
+    if (counter === 0) {
+      setMsj(() => "Por favor seleccione al menos una unidad");
+    } else if (counter > product.stock) {
+      setMsj(() => "No contamos con el stock las unidades seleccionadas");
+      } else if (counter !== 0) {
+        Add(productId, product, counter);
+        isInCart(productId);
+        setisProductInCart(true);
+        }
+    
+      
   };
 
   if (isLoading || !product) return(
@@ -77,9 +84,10 @@ const ItemDetailPage = () => {
                  <>
                    <ItemCount inc={inc} desc={desc} counter={counter} />
                  </>
-                 <button className="Dbutton" onClick={handleAddToCart}>
+                 <button className="Dbutton" onClick={handleAddToCart} >
                    Agregar al carrito{" "}
                  </button>
+                 <div className="error_v">{msj}</div>
                </>
              ) : (
                <button className="Dbutton" onClick={() => navigate(`/cart`)}>

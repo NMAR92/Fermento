@@ -6,8 +6,6 @@ import { getFirestore } from "../firebase";
 import "../pages/styles_pages/Cart.scss";
 import { MdDelete } from 'react-icons/md';
 
-
-
 const CartPage = () => {
   const {cart, clear, removeItem, TotalPrice} = useContext(CartContext);
 
@@ -36,8 +34,12 @@ const CartPage = () => {
     evt.preventDefault();
     
   //validacion de formulario
-
-    if (!name || !phone || !mail) {
+  if (ername || erform || erphone || ermail) {
+    setERName(null);
+    setERForm(null);
+    setERMail(null);
+    setERPhone(null);
+} else if (!name || !phone || !mail) {
       setERForm(() => "Por favor llene todos los campos");
       console.log("Por favor llene todos los campos");
       return false;
@@ -67,8 +69,6 @@ const CartPage = () => {
       };
 
       //manda orden al firebase
-      console.log(newOrder);
-      console.log(cart);
       const db = getFirestore();
       const ordersCollection = db.collection("orders");
       const response = await ordersCollection.add(newOrder);
@@ -76,6 +76,7 @@ const CartPage = () => {
       navigate(`/thanks/${response.id}`);
     };
   };
+
 
   return (
     <div>
@@ -123,8 +124,9 @@ const CartPage = () => {
             <button className="delete_2" onClick={clear}>
               Borrar todos
             </button>
-            <div className= "price_total">
-              <p>Precio total:<TotalPrice/></p>
+            <div className="price_total">
+              <div className="total_price"> Precio total:</div>
+              <TotalPrice />
             </div>
           </div>
           <div className="datos">
@@ -132,39 +134,52 @@ const CartPage = () => {
               <span>SUS DATOS PERSONALES</span>
             </h3>
             <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Nombre:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Escriba su nombre"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <div className='error_v'>{ername}</div>    
-        <label htmlFor="phone">Teléfono:</label>
-        <input
-          type="number"
-          id="phone"
-          name="phone"
-          placeholder="Escriba su teléfono"
-          value={phone}
-          min="0"
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <div className='error_v'>{erphone}</div>
-        <label htmlFor="mail">Mail:</label>
-        <input
-          type="text"
-          id="mail"
-          name="mail"
-          placeholder="Escriba su mail"
-          value={mail}
-          onChange={(e) => setMail(e.target.value)}
-        />
-        <div className='error_v'>{ermail}</div> 
-        <div className='error_v'>{erform}</div>   
-        <input type="submit" value="Finalizar compra" />
+              <div className="etiqueta">
+                <label htmlFor="name">Nombre:</label>
+                <input
+                  className="input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Escriba su nombre"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>  
+                <div className="error_v">{ername}</div>
+              
+              <div className="etiqueta">
+                <label htmlFor="phone">Teléfono:</label>
+                <input
+                  className="input"
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  placeholder="Escriba su teléfono"
+                  value={phone}
+                  min="0"
+                  
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>  
+                <div className="error_v">{erphone}</div>
+              
+              <div className="etiqueta">
+                <label htmlFor="mail">Mail:</label>
+                <input
+                  className="input"
+                  type="text"
+                  id="mail"
+                  name="mail"
+                  placeholder="Escriba su mail"
+                  value={mail}
+                  onChange={(e) => setMail(e.target.value)}
+                />
+              </div>  
+                <div className="error_v">{ermail}</div>
+                <div className="error_v">{erform}</div>
+              
+              <input className="delete_2" type="submit" value="Finalizar compra" />
             </form>
           </div>
         </div>

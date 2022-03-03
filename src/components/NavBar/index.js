@@ -10,7 +10,7 @@ export function NavBar() {
   return (
     <nav className="navbar">
       <div className="container">
-        <div className="title">
+        <div >
         <Link to="/" id="title">Fermentos</Link>
         </div>
       </div>
