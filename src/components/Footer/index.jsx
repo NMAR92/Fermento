@@ -25,7 +25,7 @@ return (
          <SocialIcon url="https://instagram.com/" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }}/>
         </div>
         <div className="icon">
-         <SocialIcon url="https://www.github.com" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }}/>
+         <SocialIcon url="https://github.com/NMAR92/Proyecto_Final" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }}/>
         </div>
         <div className="icon">
          <SocialIcon url="https://www.example.com" label="Fermentos" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }} />

@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
+import "../components/ItemDetailContainer/ItemDetailContainer.css"
 import { Link, useNavigate } from "react-router-dom";
 import { getFirestore } from "../firebase";
 import "../pages/styles_pages/Cart.scss";
@@ -88,7 +89,6 @@ const CartPage = () => {
 
     };
   };
-  
   
   return (
     <div>
