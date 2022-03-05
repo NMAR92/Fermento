@@ -1,6 +1,5 @@
 {
-  "homepage": "https://nmar92/github.io/fermento_2/",
-  "name": "fermento_2",
+  "name": "fermento",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
