@@ -1,6 +1,6 @@
 {
-  "homepage": "https://nmar92/github.io/Fermento/",
-  "name": "fermento",
+  "homepage": "https://nmar92/github.io/fermento_2/",
+  "name": "fermento_2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages n-d build",
     "predeploy": "npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
