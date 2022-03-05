@@ -32,6 +32,7 @@ npm start
 
 - Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- To have access of the product change the name of the file .env.example as .env
+- To have access of the product change the name of the file .env.example 
+as .env
 
 - I hope all run well :+1:
