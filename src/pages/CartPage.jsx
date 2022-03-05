@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
-import "../components/ItemDetailContainer/ItemDetailContainer.css"
 import { Link, useNavigate } from "react-router-dom";
 import { getFirestore } from "../firebase";
 import "../pages/styles_pages/Cart.scss";
 import { MdDelete } from 'react-icons/md';
+import {getCurrentDate} from '../components/Date/index'
 
 const CartPage = () => {
   const {cart, clear, removeItem, TotalPrice} = useContext(CartContext);
@@ -12,10 +12,15 @@ const CartPage = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [mail, setMail] = useState("");
+  const [mailc, setMailc] = useState("");
   const [ername, setERName] = useState("");
   const [erform, setERForm] = useState("");
   const [erphone, setERPhone] = useState("");
   const [ermail, setERMail] = useState("");
+  const [ermailc, setERMailc] = useState("");
+
+
+
   let navigate = useNavigate();
 
   //vuelvo a calcular el total pq no logro traerlo como numero desde el context
@@ -34,20 +39,21 @@ const CartPage = () => {
     evt.preventDefault();
     
   //validacion de formulario
-  if (ername || erform || erphone || ermail) {
+  if (ername || erform || erphone || ermail || ermailc) {
     setERName(null);
     setERForm(null);
     setERMail(null);
+    setERMailc(null);
     setERPhone(null);
-} else if (!name || !phone || !mail) {
+}   else if (!name || !phone || !mail) {
       setERForm(() => "Por favor llene todos los campos");
       console.log("Por favor llene todos los campos");
       return false;
-    } else if (!(name.length > 4)) {
+     } else if (!(name.length > 4)) {
       setERName(() => "Su nombre debe tener al menos 5 caracteres");
       console.log("Su nombre debe tener al menos 5 caracteres");
       return false;
-    } else if (typeof phone !== "undefined") {
+      } else if (typeof phone !== "undefined") {
       var pattern = new RegExp(/^[0-9\b]+$/);
       if (!pattern.test(phone)) {
         setERPhone(() => "Ingrese solo números");
@@ -59,6 +65,10 @@ const CartPage = () => {
         setERMail(() => "Ingrese una cuenta de mail valida");
         console.log("Ingrese una cuenta de mail valida");
         return false;
+      } else if (mail !== mailc) {
+        setERMailc(() => "La cuenta de mail no ha sido confirmada");
+        console.log("La cuenta de mail no ha sido confirmada");
+        return false;
       }
 
       //crea orden
@@ -66,6 +76,7 @@ const CartPage = () => {
         buyer: { name, phone, mail },
         items: cart,
         total: getTotal(cart),
+        date: getCurrentDate()
       };
 
       //manda orden al firebase
@@ -74,16 +85,19 @@ const CartPage = () => {
       const response = await ordersCollection.add(newOrder);
       clear(cart);
       navigate(`/thanks/${response.id}`);
+
     };
   };
-
-
+  
+  
   return (
     <div>
       {cart.length === 0 ? (
-        <div>
+        <div className="Dcart">
+          <div className="order">
           No hay productos seleccionados{" "}
           <Link to="/">Realiza tu seleccion</Link>
+          </div>
         </div>
       ) : (
         <div className="Dcart">
@@ -177,9 +191,23 @@ const CartPage = () => {
                 />
               </div>  
                 <div className="error_v">{ermail}</div>
+
+                <div className="etiqueta">
+                <label htmlFor="mailc"> Conf. Mail:</label>
+                <input
+                  className="input"
+                  type="text"
+                  id="mailc"
+                  name="mailc"
+                  placeholder="Confirme su mail"
+                  value={mailc}
+                  onChange={(e) => setMailc(e.target.value)}
+                />
+              </div>  
+                <div className="error_v">{ermailc}</div>  
                 <div className="error_v">{erform}</div>
               
-              <input className="delete_2" type="submit" value="Finalizar compra" />
+                <input className="delete_2" type="submit" value="Finalizar compra" />
             </form>
           </div>
         </div>

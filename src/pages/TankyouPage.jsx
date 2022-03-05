@@ -22,8 +22,10 @@ const ThankYouPage = () => {
 
   if (!order.id) {
     return (
-      <div className="card">
-        <Rings className="Rings" />
+      <div>
+        <div className="card_2">
+          <Rings className="Rings" />
+        </div>
       </div>
     );
   }
@@ -39,7 +41,8 @@ const ThankYouPage = () => {
           <span className="font-title_2">Sr/Sra. {order.buyer.name}</span>
         </div>
         <div className="card_title">
-          <h1>Total a abonar :${order.total}</h1>
+          <h1>Total a abonar: ${order.total}</h1>
+          <h2>Número de orden: {order.id}</h2>
           <span className="font-title_3">
             El proveedor se pondrá en contacto con usted para coordinar el
             envío.

@@ -1,43 +1,39 @@
-// import "./footer.scss";
+import "./footer.scss";
+import React from 'react';
+// import ReactDOM from 'react-dom';
+import { SocialIcon } from 'react-social-icons';
 
 
 
-// function Footer() {
 
-// return (
+function Footer() {
 
-//     <div className="footer">
-//       <table className="table_1">
-//         <thead>
-//           <tr>
-//             <th>Formulario de contacto</th>
-//             <th></th>
-//             <th>
-//               <ul class="social-icon">
-//                 <li className="social-icon__item">
-//                   <src className="social-icon__link" href="#" />
-//                   <ion-icon name="logo-facebook"></ion-icon>
-//                 </li>
-//                 <li className="social-icon__item">
-//                   <src className="social-icon__link" href="#" />
-//                   <ion-icon name="logo-twitter"></ion-icon>
-//                 </li>
-//                 <li className="social-icon__item">
-//                   <src className="social-icon__link" href="#" />
-//                   <ion-icon name="logo-linkedin"></ion-icon>
-//                 </li>
-//                 <li className="social-icon__item">
-//                   <src className="social-icon__link" href="#" />
-//                   <ion-icon name="logo-instagram"></ion-icon>
-//                 </li>
-//               </ul>
-//             </th>
-//           </tr>
-//         </thead>
-//       </table>
-//     </div>
+return (
 
-// );
-//   };
+    <footer className="footer">
+      <div className="footer_social">
+        <div className="icon">
+         <SocialIcon url="https://twitter.com" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }} />
+        </div>
+        <div className="icon">
+         <SocialIcon url="https://linkedin.com" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }}/>
+        </div>
+        <div className="icon">
+         <SocialIcon url="https://facebook.com/" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }}/>
+        </div>
+        <div className="icon">
+         <SocialIcon url="https://instagram.com/" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }}/>
+        </div>
+        <div className="icon">
+         <SocialIcon url="https://www.github.com" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }}/>
+        </div>
+        <div className="icon">
+         <SocialIcon url="https://www.example.com" label="Fermentos" bgColor="rgb(255, 255, 255)" style={{ height: 25, width: 25 }} />
+        </div>
+      </div>  
+    </footer>
 
-// export default Footer;
+);
+  };
+
+export default Footer;

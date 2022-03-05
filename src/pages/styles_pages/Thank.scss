@@ -9,7 +9,7 @@
     margin-right: 15%;
     margin-top: 3%;
     border: 0.2rem solid teal; 
-    border-radius: 3rem; 
+    border-radius: 3rem;
 
     .card_title{
         width: 90%;
@@ -43,4 +43,19 @@
        position: relative;
        z-index: 5;
     }
-}    
+} 
+
+.card_2 {
+    width: 70%;
+    padding: 2rem;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-around;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+    border: 0.2rem solid teal; 
+    border-radius: 3rem;
+}
+
