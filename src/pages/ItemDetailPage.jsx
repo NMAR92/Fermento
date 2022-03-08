@@ -90,7 +90,7 @@ const ItemDetailPage = () => {
                  <div className="error_v">{msj}</div>
                </>
              ) : (
-               <button className="Dbutton" onClick={() => navigate(`/cart`)}>
+               <button className="Dbutton" onClick={() => navigate(`/fermento/cart`)}>
                  Terminar mi compra
                </button>
              )}

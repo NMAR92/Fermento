@@ -16,17 +16,17 @@ function App() {
         <CartProvider>
           <BrowserRouter>
             <NavBar />
-            <Routes>
-              <Route path="/">
+            <Routes>npm
+              <Route path="/fermento">
                 <Route index element={<HomePage />} />
-                <Route path="item">
+                <Route path="/fermento/item">
                   <Route path=":productId" element={<ItemDetailPage />} />
                 </Route>
-                <Route path="cart" element={<CartPage />}></Route>
-                <Route path="category">
+                <Route path="/fermento/cart" element={<CartPage />}></Route>
+                <Route path="/fermento/category">
                   <Route path=":categoryId" element={<CategoryPage />} />
                 </Route>
-                <Route path="thanks/:orderId" element={<ThankyouPage />} />
+                <Route path="/fermento/thanks/:orderId" element={<ThankyouPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>
             </Routes>

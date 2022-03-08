@@ -85,7 +85,7 @@ const CartPage = () => {
       const ordersCollection = db.collection("orders");
       const response = await ordersCollection.add(newOrder);
       clear(cart);
-      navigate(`/thanks/${response.id}`);
+      navigate(`/fermento/thanks/${response.id}`);
 
     };
   };
@@ -96,7 +96,7 @@ const CartPage = () => {
         <div className="Dcart">
           <div className="order">
           No hay productos seleccionados{" "}
-          <Link to="/">Realiza tu seleccion</Link>
+          <Link to="/fermento">Realiza tu seleccion</Link>
           </div>
         </div>
       ) : (

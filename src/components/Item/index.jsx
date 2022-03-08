@@ -14,7 +14,7 @@ const navigate = useNavigate();
 return (
   <div className="item-card">
     <div className="img-container">
-    <img src={product.img} alt={product.name} onClick={() => navigate(`/item/${product.id}`)}/>
+    <img src={product.img} alt={product.name} onClick={() => navigate(`/fermento/item/${product.id}`)}/>
     </div>
     <div className="data-container">
       {/* <button className="navBtnN"onClick={buttonhandler}>{show ? "Mostrar" : "Ocultar"}</button>
@@ -23,7 +23,7 @@ return (
       {!show && <button className="navBtn" onClick={() => navigate(`/item/${product.id}`)}>Ver más...</button>} */}
       <p className="name"> {product.name}</p>
       <p className="price">Precio: ${product.price}</p>
-      <button className="navBtn" onClick={() => navigate(`/item/${product.id}`)}>Ver más...</button>
+      <button className="navBtn" onClick={() => navigate(`/fermento/item/${product.id}`)}>Ver más...</button>
 
     </div>
     
