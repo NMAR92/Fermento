@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fermento/static/css/main.e64d6d0b.css",
-    "main.js": "/fermento/static/js/main.ab51ce94.js",
+    "main.js": "/fermento/static/js/main.761865b6.js",
     "static/js/787.b97f32ba.chunk.js": "/fermento/static/js/787.b97f32ba.chunk.js",
     "index.html": "/fermento/index.html",
     "main.e64d6d0b.css.map": "/fermento/static/css/main.e64d6d0b.css.map",
-    "main.ab51ce94.js.map": "/fermento/static/js/main.ab51ce94.js.map",
+    "main.761865b6.js.map": "/fermento/static/js/main.761865b6.js.map",
     "787.b97f32ba.chunk.js.map": "/fermento/static/js/787.b97f32ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e64d6d0b.css",
-    "static/js/main.ab51ce94.js"
+    "static/js/main.761865b6.js"
   ]
 }
