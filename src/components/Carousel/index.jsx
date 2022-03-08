@@ -17,7 +17,7 @@ export default function CarouselComponent() {
                 height="300px"
                 alt=""
               />
-              <div className="centrado" onClick={() => navigate(`/category/3`)}>Quesos</div>
+              <div className="centrado" onClick={() => navigate(`/fermento/category/3`)}>Quesos</div>
             </div>
             <div className="imagen">
               <img
@@ -26,7 +26,7 @@ export default function CarouselComponent() {
                 height="300px"
                 alt=""
               />
-              <div className="centrado" onClick={() => navigate(`/category/2`)}>Cervezas</div>
+              <div className="centrado" onClick={() => navigate(`/fermento/category/2`)}>Cervezas</div>
             </div>
             <div className="imagen">
               <img
@@ -35,7 +35,7 @@ export default function CarouselComponent() {
                 height="300px"
                 alt=""
               />
-              <div className="centrado" onClick={() => navigate(`/category/1`)}>Probióticos</div>
+              <div className="centrado" onClick={() => navigate(`/fermento/category/1`)}>Probióticos</div>
             </div>
           </Carousel>
         </div>
