@@ -37,5 +37,7 @@ as .env
 
 - I hope all run well :+1:
 
+ ![image](https://github.com/NMAR92/fermento/blob/gh-pages/fermento.gif.gif)
+
 
 ## The app is public at https://nmar92.github.io/fermento
