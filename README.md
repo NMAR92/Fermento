@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 Follow the following steps to get development environment running.
 - Clone 'Proyecto_Final' repository from GitHub.
 ```
-git clone https://github.com/NMAR92/Proyecto_Final
+git clone https://github.com/NMAR92/fermento
 ```
 - Install node modules.
 ```
